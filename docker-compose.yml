@@ -1,11 +1,15 @@
 django:
     build: django
     restart: always
+    command: python3 manage.py runserver 0.0.0.0:8000
     ports:
         - "8000:8000"
     links:
         - mongo
+    volumes:
+        - ./django/src:/data/src
 mongo:
     image: mvertes/alpine-mongo
     restart: always
-    volumes: ./data:/data/db
+    volumes:
+        - ./data:/data/db
