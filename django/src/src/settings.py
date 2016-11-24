@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'short.apps.ShortConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -80,7 +81,7 @@ DATABASES = {
     }
 }
 
-SESSION_ENGINE = 'mongoengine.django.sessions' # optional
+# SESSION_ENGINE = 'mongoengine.django.sessions' # optional
 
 _MONGODB_USER = 'mongouser'
 _MONGODB_PASSWD = 'password'
@@ -93,9 +94,9 @@ _MONGODB_DATABASE_HOST = 'mongodb://mongo'
 
 mongoengine.connect(_MONGODB_NAME, host=_MONGODB_DATABASE_HOST)
 
-AUTHENTICATION_BACKENDS = (
-    'mongoengine.django.auth.MongoEngineBackend',
-)
+# AUTHENTICATION_BACKENDS = (
+    # 'mongoengine.django.auth.MongoEngineBackend',
+# )
 
 TEST_RUNNER = 'yourproject.tests.NoSQLTestRunner'
 
