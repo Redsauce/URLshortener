@@ -1,0 +1,11 @@
+django:
+    build: django
+    restart: always
+    ports:
+        - "8000:8000"
+    links:
+        - mongo
+mongo:
+    image: mvertes/alpine-mongo
+    restart: always
+    volumes: ./data:/data/db
