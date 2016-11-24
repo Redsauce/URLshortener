@@ -1,9 +1,16 @@
+nginx:
+    build: nginx
+    restart: always
+    ports:
+        - "80:80"
+    links:
+        - django
 django:
     build: django
     restart: always
     command: python3 manage.py runserver 0.0.0.0:8000
-    ports:
-        - "8000:8000"
+    expose:
+        - "8000"
     links:
         - mongo
     volumes:
