@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, Http404
 from django.urls import reverse
 from .models import ShortURL
 import os
@@ -9,7 +9,11 @@ def home(request):
 
 def redirect(request, short_id):
     short = ShortURL.objects(short=short_id).first()
-    return HttpResponseRedirect(short.target)
+    if short:
+        return HttpResponseRedirect(short.target)
+    else:
+        raise Http404("The short link does not exist")
+
 
 def success(request, short_id):
     return render(request, 'short/success.html', {'short_id': short_id})
