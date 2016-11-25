@@ -8,7 +8,7 @@ nginx:
 django:
     build: django
     restart: always
-    command: python3 manage.py runserver 0.0.0.0:8000
+    command: gunicorn src.wsgi -w 2 -b 0.0.0.0:8000
     expose:
         - "8000"
     links:
