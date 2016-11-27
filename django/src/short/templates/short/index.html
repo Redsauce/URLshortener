@@ -7,19 +7,17 @@
 
 {% block content %}
 
-<div class="panel panel-default">
-    <div class="panel-body">
-        <form action="shortify/" method="POST">
-        <div class="col-sm-9">
+<div class="row">
+    <form action="shortify/" method="POST">
+        <div class="nine columns">
             <input type="text" name="url" id="url" class="form-control input-sm" placeholder="http://www.facebook.com" />
         </div>
-        <div class="col-sm-3">
+        <div class="three columns">
             {% csrf_token %}
-            <input id="submitButton" class="btn btn-primary" type="submit" value="Submit"/></p> 
+            <input id="submitButton" class="button-primary" type="submit" value="Submit"/></p> 
         </div>
-        </form>
-    </div>
-    <div class="panel-footer"><span id="url-result">Enter the URL above and click submit!</span></div>
+    </form>
 </div>
+<div class="row"><span id="url-result">Enter the URL above and click submit!</span></div>
 {% endblock %}
 

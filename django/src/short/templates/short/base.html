@@ -2,15 +2,15 @@
 <html>
     <head>
         <title>{% block title %}:D{% endblock %}</title>
-        {% load staticfiles %}
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="{% static 'shortenersite/css/custom.css' %}" />
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        {% load static %}
+        <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="{% static 'skeleton/css/normalize.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'skeleton/css/skeleton.css' %}" />
     </head>
     {% block scripts %}
     {% endblock %}
     <body>
-        <div id="content">
+        <div id="content" class="container">
             {% block content %}
             {% endblock %}
         </div>

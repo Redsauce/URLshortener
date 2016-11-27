@@ -5,10 +5,11 @@ nginx:
         - "80:80"
     links:
         - django
+    volumes_from:
+        - django:ro
 django:
     build: django
     restart: always
-    command: gunicorn src.wsgi -w 2 -b 0.0.0.0:8000
     expose:
         - "8000"
     links:
