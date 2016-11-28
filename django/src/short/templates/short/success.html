@@ -7,11 +7,9 @@
 
 {% block content %}
 
-<div class="panel panel-default">
-    <div class="panel-body">
-        <h2>You have a new URL!</h2>
-    </div>
-    <div class="panel-footer"><span id="url-result">Your short url is: <a href="http://{{ request.META.HTTP_HOST }}/{{ short_id }}">{{ request.META.HTTP_HOST }}/{{ short_id }}</a></span></div>
+<div class="row">
+    <h2>You have a new URL!</h2>
 </div>
+<div class="row"><span id="url-result">Your short url is: <a href="http://{{ request.META.HTTP_HOST }}/{{ short_id }}">{{ request.META.HTTP_HOST }}/{{ short_id }}</a></span></div>
 {% endblock %}
 
