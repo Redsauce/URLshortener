@@ -3,3 +3,4 @@
 django/env/
 *.swp
 django/src/staticfiles/
+data/

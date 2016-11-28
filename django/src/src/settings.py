@@ -26,7 +26,7 @@ SECRET_KEY = '+1e2ipa7xa%=9%!rj(ot9vof!=&#%!$tn7&_fdh_!llrk!#$rm'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['short.redsauce.net']
+ALLOWED_HOSTS = ['short.redsauce.net', '127.0.0.1']
 
 
 # Application definition
