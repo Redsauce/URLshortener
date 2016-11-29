@@ -10,7 +10,7 @@ def home(request):
 def redirect(request, short_id):
     short = ShortURL.objects(short=short_id).first()
     if short:
-        return HttpResponseRedirect(short.target)
+        return HttpResponseRedirect(short.get_target(request))
     else:
         raise Http404("The short link does not exist")
 
