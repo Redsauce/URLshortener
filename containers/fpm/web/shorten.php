@@ -22,7 +22,7 @@ function get_unique_short_id($size){
     while ($found == false) {
         $res = "";
         for($i = 0; $i < $size; $i++){
-            $res .= $valid_bytes[random_int(0,strlen($valid_bytes))];
+            $res .= $valid_bytes[random_int(0,strlen($valid_bytes) - 1)];
         }
         if (!entry_exists($res)) {
             $found = true;
