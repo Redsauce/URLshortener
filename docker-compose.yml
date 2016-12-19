@@ -4,18 +4,14 @@ nginx:
     ports:
         - "80:80"
     links:
-        - django
-    volumes_from:
-        - django:ro
-django:
-    build: django
+        - fpm
+fpm:
+    build: fpm
     restart: always
     expose:
-        - "8000"
+        - "9000"
     links:
         - mongo
-    volumes:
-        - ./django/src:/data/src
 mongo:
     image: mvertes/alpine-mongo
     restart: always
